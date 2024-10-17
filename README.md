@@ -51,16 +51,20 @@ These metrics indicate that the model performs very well on the test data, parti
 Initial models like the Decision Tree and XGBoost showed overfitting with 100% accuracy on the training set. This was addressed by:
 
 5. Final Model and Deployment
+
 5.1 Saving and Deployment
 The XGBoost model was saved using pickle for deployment, allowing it to be used for real-time fraud detection:
 
 import pickle
 with open('Final_Credit_Card_Fraud_Detection_Model.pkl', 'wb') as file:
     pickle.dump(classifiers['XGB Classifier'], file)
+
+
 5.2 Model Maintenance
 Post-deployment steps include:
 Monitoring: Continuously monitor model performance to ensure it handles new data effectively.
 Retraining: Periodic retraining with new data to ensure the model stays up-to-date with potential changes in fraud patterns.
+
 6. Lessons Learned
 Handling Class Imbalance: Techniques like SMOTE helped balance the dataset, significantly improving model performance.
 Model Overfitting: Early stopping, regularization, and careful tuning of hyperparameters were key to addressing overfitting.
